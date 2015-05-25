@@ -1,0 +1,158 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    background: #EBF5FF;
+}
+
+body { 
+    font: 13px Helvetica, Arial; 
+}
+
+form { 
+    background: #000; 
+    padding: 3px; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+form input { 
+    border: 0; 
+    padding: 10px; 
+    width: 90%; 
+    margin-right: .5%; 
+}
+
+form button { 
+    width: 9%; 
+    background: rgb(130, 224, 255); 
+    border: none; 
+    padding: 10px; 
+}
+
+#typing {
+    bottom: 5.6%;
+    font-size: 16px;
+    margin-left: 15px;
+    z-index: 4;
+    list-style-type: none;
+    position: fixed;
+    width: 20%;
+}
+
+#text_entered {
+    bottom: 5.6%;
+    right: 25%;
+    font-size: 16px;
+    margin: auto;
+    list-style-type: none;
+    position: fixed;
+    text-align: right;
+    width: 80%;
+}
+
+#header {
+    font-size: 28;
+    position: fixed;
+    top: -10px;
+    /*margin-left: 33%;*/
+    font-weight: Bold;
+    width: 78%;
+    height: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    z-index: 1;
+}
+
+#header h1 {
+    text-align: center;
+}
+
+#friends {
+    position: fixed;
+    z-index: 2;
+    right: 4%; /*80px;*/
+    top: 4%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: black solid 2px;
+    width: 20%;
+    height: 90%;
+    padding-top: 1%;
+    padding-left: .5%;
+    padding-right: .5%;
+    padding-bottom: 6%;
+    text-align: center;
+    list-style-type: none;
+    text-align: center;
+    background-color: #B8DBFF;
+}
+
+#friends li {
+    background:: #B8DBFF;
+}
+
+#online_friends {
+    font-size: 18px;
+    padding: 5px;
+    font-weight: none;
+    background-color: #B8DBFF;
+}
+
+#online_friends li {
+    font-size: 18px;
+    padding: 5px;
+    font-weight: none;
+    background-color: #B8DBFF;
+}
+
+.btn-group-vertical {
+    font-size: 18px;
+    padding: 5px;
+    padding-top: 15px;
+    font-weight: none;
+    background-color: #B8DBFF;
+    border-radius: 10px;
+}
+
+#online_friends button {
+    font-size: 20px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: none;
+    border-radius: 15px;
+    background-color: #8AD48A;
+    display: block;
+}
+
+#friends h3 {
+    background: #B8DBFF;
+}
+#messages { 
+    clear: both;
+    list-style-type: none; 
+    margin: .1%; 
+    margin-top: 3%;
+    margin-bottom: 5%;
+    padding: 0;
+    
+}
+#messages li { 
+    padding: 5px 10px; 
+    border-radius: 10px; 
+    margin: 10px;
+    width: 75%;
+}
+#messages li:nth-child(odd) {
+ background: #EBD6FF; 
+}
+#messages li:nth-child(even) {
+    background: #CECEF8;
+}
+
+/*#typing{
+    position: fixed;
+    width: 20%;
+}*/
