@@ -2,7 +2,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var session = require('client-sessions');
-//shan comment
+
 app.use(session({
 	cookieName: 'session',
 	secret: 'qwerty',
@@ -15,6 +15,14 @@ app.get('/', function(req, res) {
 	sess = req.session;
 	sess.user = 'unknown';
 	res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/*.js', function(req, res) {
+    res.sendFile(__dirname + req.url);
+});
+
+app.get('/*.css', function(req, res) {
+    res.sendFile(__dirname + req.url);
 });
 
 io.on('connection', function(socket){
