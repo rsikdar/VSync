@@ -1,0 +1,64 @@
+
+/*body {
+    background-image: url("http://kugantharan.com/wp-content/uploads/2013/02/Wallpaper-Abstract-Abstraction-Texture-Texture-Background-Bokeh-Blue.jpg");
+}
+*/
+
+#header {
+    margin: auto;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 5%;
+}
+
+#searchBar {
+    background-color: rgb(250, 249, 249);
+    width: 40%;
+    height: 2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(143, 172, 236);
+    border-radius: 100px;
+    margin: 2% auto 2% auto;
+    /* padding-bottom: .5em; */
+    /* padding-top: 1em; */
+}
+
+#searchImage {
+    width: 1em;
+    margin: 1% 2% 1% 2%;
+    display: inline;
+}
+#searchBar p {
+    display: inline-block;
+    margin: .5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5em;
+}            
+#description {
+    text-align: center;
+    margin: 3%;
+    font-size: 1.5em;
+} 
+
+input {
+    background-color: rgb(250, 249, 249);
+    border: none;
+    font-size: 1.25em;
+    text-align: left;
+    display: inline-block;
+    width: inherit;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 80%;
+    margin: 0 auto;
+    /* margin-bottom: 20em; */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

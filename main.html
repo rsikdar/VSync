@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type= "text/css" href = "main.css">
+        <link rel="shortcut icon" href='http://104.36.83.116/favicon.ico' type="image/x-icon">
+        <link rel="icon" href="http://104.36.83.116/favicon.ico" type="image/x-icon">
+
+        <title>VSync</title>
+    </head>
+    <body>
+        <div id='header'>
+            <h1>VSync</h1>  
+        </div>
+        <div id = 'searchBar' >
+            <img id='searchImage' src = 'http://static1.squarespace.com/static/528e87f3e4b0ef5d1e49355e/t/5374ab4fe4b060b2a3d1a69c/1400154961532/search-icon-01.jpg'>
+            <input onfocus="if (this.value=='search') this.value = ''" type="text" value="search"></input>
+        </div>
+        <div id = 'description'>
+            <p>Either enter a url, or search for a youtube video</p>
+            <p>Then invite friends to watch with you!</p>
+        </div>
+        <div id = 'popularVideos'>
+            
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <audio id='sound1' src="http://themushroomkingdom.net/sounds/wav/smw/smw_coin.wav" preload='auto' autostart="false" width="0" height="0"
+        enablejavascript="true"></audio>
+        <script type="text/javascript" src = "chatFunctions.js"></script>
+    </body>
+</html>
