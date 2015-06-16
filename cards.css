@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: auto;
+}
+
+
+h1 {
+  text-align: center;
+  font-family: Cambria;
+  font-weight: normal;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+textarea {
+  width: 160px;
+  height: 80px;
+  padding: 1em;
+  resize: none;
+  outline: none;
+  background-color: lightgrey;
+}
+
+.card {
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  border-radius:3px;
+  margin: 1em;
+  user-select:none;
+  width: auto;
+  height: auto;
+}
+
+#left-container {
+  margin: 0 auto;
+  padding: 0;
+  width: 75vw;
+  min-width: 700px;
+  height: 100vh;
+  border-radius:0;
+  display: inline-block;
+  float: left;
+  visibility:hidden;
+  z-index: 1
+}
+
+#right-container {
+  margin: auto;
+  padding: 0;
+  width: 25vw;
+  min-width: 268px;
+  height: 100vh;
+  border: none;
+  display:inline-block;
+  float: right;
+  position: absolute;
+  visibility: hidden;
+}
+
+#page-container {
+  margin: 0 auto;
+  padding: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+#chat-box {
+  height: 89vh;
+  margin: 1em;
+  visibility: visible;
+  overflow: visible;
+  background-color: white;
+}
+
+#video-box {
+  margin: 1rem;
+  width: 640px;
+  height: 410px;
+  margin-left: auto;
+  margin-right: auto;
+
+  visibility: visible;
+  overflow: visible;
+  z-index: 2;
+}
+
+#other-box {
+  visibility: visible;
+  width: 642px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+#message-box {
+  width: auto;
+  height: 57vh;
+}
