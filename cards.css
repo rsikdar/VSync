@@ -63,7 +63,7 @@ button {
   padding: 0;
   width: 75vw;
   min-width: 700px;
-  height: 700px;
+  height: 630px;
   border-radius:0;
   display: inline-block;
   float: left;
@@ -78,7 +78,7 @@ button {
   padding: 0;
   width: 25vw;
   min-width: 278px;
-  height: 700px;
+  height: 630px;
   border: none;
   display:inline-block;
   float: right;
@@ -98,7 +98,7 @@ button {
 }
 
 #chat-box {
-  height: 89vh;
+  height: 100%;
   margin: 1em;
   visibility: visible;
   overflow: visible;
