@@ -2,11 +2,17 @@
   margin: 0;
   padding: 0;
   border: none;
-  overflow: auto;
+  overflow: hidden;
 }
 
 
 h1 {
+  text-align: center;
+  font-family: Cambria;
+  font-weight: normal;
+}
+
+h2 {
   text-align: center;
   font-family: Cambria;
   font-weight: normal;
@@ -22,12 +28,23 @@ hr {
 }
 
 textarea {
-  width: 160px;
-  height: 80px;
+  width: 9vw;
+  height: 8vh;
   padding: 1em;
+  display: inline-block;
   resize: none;
   outline: none;
-  background-color: lightgrey;
+  background-color: #DCDCDC;
+}
+
+button {
+  width: 5.3vw;
+  height: 11.15vh;
+  margin-left: 1em;
+  vertical-align: top;
+  display: inline-block;
+  float: right;
+  background-color: lightblue;
 }
 
 .card {
@@ -46,25 +63,28 @@ textarea {
   padding: 0;
   width: 75vw;
   min-width: 700px;
-  height: 100vh;
+  height: 700px;
   border-radius:0;
   display: inline-block;
   float: left;
+  position:relative;
   visibility:hidden;
-  z-index: 1
+  z-index: 1;
+  overflow: visible;
 }
 
 #right-container {
   margin: auto;
   padding: 0;
   width: 25vw;
-  min-width: 268px;
-  height: 100vh;
+  min-width: 278px;
+  height: 700px;
   border: none;
   display:inline-block;
   float: right;
   position: absolute;
   visibility: hidden;
+  overflow: visible;
 }
 
 #page-container {
@@ -74,6 +94,7 @@ textarea {
   width: 100vw;
   height: 100vh;
   background-color: lightblue;
+  overflow: scroll;
 }
 
 #chat-box {
@@ -90,7 +111,6 @@ textarea {
   height: 410px;
   margin-left: auto;
   margin-right: auto;
-
   visibility: visible;
   overflow: visible;
   z-index: 2;
@@ -99,7 +119,7 @@ textarea {
 #other-box {
   visibility: visible;
   width: 642px;
-  height: 40px;
+  height: 45px;
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
@@ -107,5 +127,10 @@ textarea {
 
 #message-box {
   width: auto;
-  height: 57vh;
+  height: 59%;
+  margin: 0 auto;
+}
+
+#friends-online-box {
+  height: 6%;
 }

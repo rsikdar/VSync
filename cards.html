@@ -47,9 +47,9 @@
                 player = new YT.Player('player', {
                   height: '360',
                   width: '640',
-                  videoId: 'O5RdMvgk8b0',
+                  /*videoId: 'O5RdMvgk8b0',*/
                   controls: 0,
-                  playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0 },
+                  playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
                   events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
@@ -77,17 +77,19 @@
               }
             </script>
         </div>
-        <div class="card" id="other-box">Cool Cid Thangs</div>
+        <div class="card" id="other-box">RANDOM ASS BOX</div>
       </div>
       <div class="card" id="right-container">
         <div class="card" id="chat-box">
             <h1>Chat</h1>
             <hr></hr>
-            <hl>(People Online)</h1>
+            <div id="friends-online-box">(People Online)</div>
             <hr></hr>
             <div id="message-box"></div>
+            <hr></hr>
             <form>
               <textarea></textarea>
+              <button><h2>Send</h2></button>
             </form>
         </div>
       </div>
