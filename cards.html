@@ -3,11 +3,13 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="cards.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="cards.js"></script>
   </head>
   <body>
     <div class="card" id="page-container">
       <div class="card" id="left-container">
-        <div class="card" id="other-box">
+        <div class="card" id="upper-box">
           <h1 style="text-align: right">VSync</h1>
         </div>
         <div class="card" id="video-box">
@@ -47,7 +49,7 @@
                 player = new YT.Player('player', {
                   height: '360',
                   width: '640',
-                  /*videoId: 'O5RdMvgk8b0',*/
+                  videoId: 'O5RdMvgk8b0',
                   controls: 0,
                   playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
                   events: {
@@ -77,7 +79,7 @@
               }
             </script>
         </div>
-        <div class="card" id="other-box">RANDOM ASS BOX</div>
+        <div class="card" id="lower-box">RANDOM ASS BOX</div>
       </div>
       <div class="card" id="right-container">
         <div class="card" id="chat-box">

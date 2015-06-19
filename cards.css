@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   border: none;
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -28,9 +28,7 @@ hr {
 }
 
 textarea {
-  width: 9vw;
-  height: 8vh;
-  padding: 1em;
+  width: 55%;
   display: inline-block;
   resize: none;
   outline: none;
@@ -38,10 +36,8 @@ textarea {
 }
 
 button {
-  width: 5.3vw;
-  height: 11.15vh;
-  margin-left: 1em;
-  vertical-align: top;
+  width: 35%;
+  height: 10%;
   display: inline-block;
   float: right;
   background-color: lightblue;
@@ -59,32 +55,33 @@ button {
 }
 
 #left-container {
-  margin: 0 auto;
+  margin: .2em;
+  margin-left: 1em;
   padding: 0;
-  width: 75vw;
+  width: 65%;
   min-width: 700px;
-  height: 630px;
+  height: auto;
   border-radius:0;
   display: inline-block;
   float: left;
-  position:relative;
   visibility:hidden;
-  z-index: 1;
-  overflow: visible;
+
+
 }
 
 #right-container {
-  margin: auto;
+  margin: .2em;
+  margin-bottom: 1em;
   padding: 0;
-  width: 25vw;
-  min-width: 278px;
-  height: 630px;
+  width: 400px;
+  height: 86vh;
+  min-height: 608px;
   border: none;
-  display:inline-block;
+  display: inline-block;
   float: right;
-  position: absolute;
+  vertical-align: top;
+  position: fixed;
   visibility: hidden;
-  overflow: visible;
 }
 
 #page-container {
@@ -94,7 +91,7 @@ button {
   width: 100vw;
   height: 100vh;
   background-color: lightblue;
-  overflow: scroll;
+  overflow: visible;
 }
 
 #chat-box {
@@ -107,8 +104,10 @@ button {
 
 #video-box {
   margin: 1rem;
-  width: 640px;
-  height: 410px;
+  padding-top: 1em;
+  width: 30vw;
+  min-width: 640px;
+  min-height: 340px;
   margin-left: auto;
   margin-right: auto;
   visibility: visible;
@@ -116,10 +115,27 @@ button {
   z-index: 2;
 }
 
-#other-box {
+#player {
+  vertical-align: middle;
+}
+
+#upper-box {
   visibility: visible;
-  width: 642px;
-  height: 45px;
+  width: 35vw;
+  min-width: 642px;
+  min-height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 1em;
+}
+
+#lower-box {
+  visibility: visible;
+  width: 35vw;
+  min-width: 642px;
+  height: 10vh;
+  min-height: 55px;
+  vertical-align: middle;
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
@@ -127,7 +143,7 @@ button {
 
 #message-box {
   width: auto;
-  height: 59%;
+  height: 54%;
   margin: 0 auto;
 }
 
