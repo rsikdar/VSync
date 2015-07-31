@@ -3,6 +3,7 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="cards.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="cards.js"></script>
   </head>
@@ -10,7 +11,13 @@
     <div class="card" id="page-container">
       <div class="card" id="left-container">
         <div class="card" id="upper-box">
-          <h1 style="text-align: right">VSync</h1>
+          <div id="search-bar">
+            <span class="icon"><i class="fa fa-search-plus"></i></span>
+            <input type="search" id="search" placeholder="Search..." />
+          </div>
+          <div id="logo">
+            <h1>VSync</h1>
+          </div>
         </div>
         <div class="card" id="video-box">
           <input id='videoInput' name = 'videoInput' />
@@ -28,9 +35,7 @@
         				//How do I show that player is already defined
         				player.loadVideoById(info[1], 5, "large")
         			}
-
         		}
-
 
         	</script>
 
@@ -89,7 +94,7 @@
             <hr></hr>
             <div id="message-box"></div>
             <hr></hr>
-            <form>
+            <form id="messenger-box">
               <textarea></textarea>
               <button><h2>Send</h2></button>
             </form>

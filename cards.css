@@ -28,18 +28,22 @@ hr {
 }
 
 textarea {
-  width: 55%;
+  width: 50%;
+  height: 77%;
   display: inline-block;
   resize: none;
   outline: none;
+  padding: 1em;
   background-color: #DCDCDC;
 }
 
 button {
   width: 35%;
-  height: 10%;
+  height: 100%;
   display: inline-block;
   float: right;
+  padding: 1em;
+  margin-bottom: 1em;
   background-color: lightblue;
 }
 
@@ -65,8 +69,6 @@ button {
   display: inline-block;
   float: left;
   visibility:hidden;
-
-
 }
 
 #right-container {
@@ -74,7 +76,7 @@ button {
   margin-bottom: 1em;
   padding: 0;
   width: 400px;
-  height: 86vh;
+  height: 79vh;
   min-height: 608px;
   border: none;
   display: inline-block;
@@ -119,9 +121,30 @@ button {
   vertical-align: middle;
 }
 
+#logo {
+  display: inline-block;
+  float: right;
+}
+
+#search-bar {
+  display: inline-block;
+}
+
+#search {
+  padding: 1em;
+  margin-left: 1em;
+  background: #DCDCDC;
+  border: none;
+  outline: none;
+  font-size: 10pt;
+  color: #63717f;
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
 #upper-box {
   visibility: visible;
-  width: 35vw;
+  width: 30vw;
   min-width: 642px;
   min-height: 35px;
   margin-left: auto;
@@ -131,7 +154,7 @@ button {
 
 #lower-box {
   visibility: visible;
-  width: 35vw;
+  width: 30vw;
   min-width: 642px;
   height: 10vh;
   min-height: 55px;
@@ -145,6 +168,10 @@ button {
   width: auto;
   height: 54%;
   margin: 0 auto;
+}
+
+#messenger-box {
+  height: 19%;
 }
 
 #friends-online-box {
