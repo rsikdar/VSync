@@ -38,12 +38,11 @@ textarea {
 }
 
 button {
-  width: 35%;
+  width: 34%;
   height: 100%;
   display: inline-block;
   float: right;
   padding: 1em;
-  margin-bottom: 1em;
   background-color: lightblue;
 }
 
@@ -171,7 +170,7 @@ button {
 }
 
 #messenger-box {
-  height: 19%;
+  height: 14vh;
 }
 
 #friends-online-box {
