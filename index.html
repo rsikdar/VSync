@@ -2,23 +2,26 @@
 <html>
 	<head>
 		<link rel="stylesheet" type= "text/css" href = "index.css">
-		<link href="../../bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="shortcut icon" href='http://104.36.83.116/favicon.ico' type="image/x-icon">
-		<link rel="icon" href="http://104.36.83.116/favicon.ico" type="image/x-icon">
+		<!-- <link href="../../bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+		<!-- <link rel="shortcut icon" href='http://104.36.83.116/favicon.ico' type="image/x-icon"> -->
+		<!-- <link rel="icon" href="http://104.36.83.116/favicon.ico" type="image/x-icon"> -->
+    <link type="text/css" rel="stylesheet" href="https://vjs.zencdn.net/4.12/video-js.css" />
+    <script src="https://vjs.zencdn.net/4.12/video.js"></script>
+    <script src="./node_modules/videojs-youtube/dist/vjs.youtube.js"></script>
 		<title>Chat</title>
     </head>
     <body>
     	<div id='header'>
-    		<h1>Rohan's Amazing Chat Room!</h1>	
+    		<h1>Rohan's Amazing Chat Room!</h1>
     	</div>
-		
+
 	<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 	<input id='videoInput' name = 'videoInput' /><button  onclick="startVideo(document.getElementById('videoInput').value)">Send</button>
     <div id="player"></div>
 
-	
+
 	<script>
-	
+
 		function startVideo(video_url)
 		{
 			var info = video_url.match(/\=(.*?)$/);
@@ -29,12 +32,12 @@
 				//How do I show that player is already defined
 				player.loadVideoById(info[1], 5, "large")
 			}
-		
+
 		}
-	
-	
+
+
 	</script>
-	
+
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -57,35 +60,101 @@
           }
         });
       }
-
+      var ignore = false;
+      var initialize = false;
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
-        event.target.playVideo();
+        // console.log('hello');
+        initialize = true;
+        player.playVideo();
+        // ignore = true;
+        player.pauseVideo();
+        // console.log(player.getIframe);
+        // var play = document.getElementsByClassName("html5-player-chrome");
+        // var play = document.getElementById('player');
+        // console.log('hello');
+        // console.log(play);
+        // play.forEach(function (elem) {
+        //   elem.onclick = clickFunc();
+        // })
+        // var time = new Date().getTime() + 500;
+        // socket.emit('hostStart', time);
+        // // console.log('start ' + time);
+        // setTimeout(playVideo, time - new Date().getTime());
+        // // event.target.playVideo();
+        // ignore = true;
+        initialize = false;
+        socket.emit('ready');
       }
 
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
+      function sendPlayVideo() {
+        console.log('emitting play');
+        socket.emit('play', player.getCurrentTime());
+      }
+      // function sendPlayVideo() {
+      //   console.log('emitting play');
+      //   socket.emit('pause', player.getCurrentTime());
+      // }
       var done = false;
+      var toggle = true;
+
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
+        console.log(ignore, initialize);
+        if (ignore || initialize) {
+          ignore = false;
+          return;
         }
+        // console.log(event.data);
+        //playing
+        if (event.data == 1) {
+          ignore = true;
+
+            // // player.playVideo();
+            player.pauseVideo();
+            // var time = new Date().getTime() + 500;
+            // socket.emit('hostStart', time);
+
+            // setTimeout(playVideo, time - new Date().getTime());
+
+          // var toggle = false;
+          // var time = new Date().getTime() + 5000;
+        // socket.emit('hostStart', time);
+        // console.log('start ' + time);
+        // setTimeout(playVideo, time - new Date().getTime());
+        // event.target.playVideo();
+        socket.emit('play');
+        //paused
+        } else if (event.data == 2) {
+          console.log('sending pause');
+          socket.emit('pause', player.getCurrentTime());
+        }
+      }
+      function playVideo() {
+        ignore = true;
+        player.playVideo();
       }
       function stopVideo() {
         player.stopVideo();
       }
+      function togglePause() {
+        toggle = false;
+      }
     </script>
-		
+
 		<div id='friends'>
 			<h3>Friends Online</h3>
-			<div id= 'online_friends'> <!-- creates vertical buttons-->	
+			<div id= 'online_friends'> <!-- creates vertical buttons-->
 				<div class="btn-group-vertical" role="group" aria-label="...">
 					<li> You should make some friends </li>
+
 				</div>
 			</div>
 		</div>
+    <button type="button" onclick = "sendPlayVideo()">Play</button>
+    <button type="button" onclick = "sendPauseVideo()">Pause</button>
     	<ul id='messages'></ul>
     	<form action='' name = "Form">
     		<li id='typing'></li>
