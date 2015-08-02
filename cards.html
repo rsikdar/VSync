@@ -54,7 +54,7 @@
                 player = new YT.Player('player', {
                   height: '360',
                   width: '640',
-                  videoId: 'O5RdMvgk8b0',
+                  videoId: 'Awf45u6zrP0',
                   controls: 0,
                   playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
                   events: {
@@ -66,7 +66,7 @@
 
               // 4. The API will call this function when the video player is ready.
               function onPlayerReady(event) {
-                event.target.playVideo();
+                //event.target.playVideo();
               }
 
               // 5. The API calls this function when the player's state changes.
@@ -88,7 +88,9 @@
       </div>
       <div class="card" id="right-container">
         <div class="card" id="chat-box">
-            <h1>Chat</h1>
+            <div id="chat-title">
+              <h1>Chat</h1>
+            </div>
             <hr></hr>
             <div id="friends-online-box">(People Online)</div>
             <hr></hr>
