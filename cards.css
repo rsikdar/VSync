@@ -29,8 +29,9 @@ hr {
 
 textarea {
   width: 50%;
-  height: 77%;
+  min-height: 120px;
   display: inline-block;
+  box-sizing: border-box;
   resize: none;
   outline: none;
   padding: 1em;
@@ -38,11 +39,11 @@ textarea {
 }
 
 button {
-  width: 34%;
-  height: 100%;
+  width: 40%;
+  min-height: 120px;
   display: inline-block;
   float: right;
-  padding: 1em;
+
   background-color: lightblue;
 }
 
@@ -72,11 +73,9 @@ button {
 
 #right-container {
   margin: .2em;
-  margin-bottom: 1em;
   padding: 0;
-  width: 400px;
-  height: 79vh;
-  min-height: 608px;
+  min-width: 500px;
+  min-height: 819px;
   border: none;
   display: inline-block;
   float: right;
@@ -96,8 +95,10 @@ button {
 }
 
 #chat-box {
-  height: 100%;
+  box-sizing: border-box;
   margin: 1em;
+  padding: 1.5em;
+  height: 100%;
   visibility: visible;
   overflow: visible;
   background-color: white;
@@ -118,6 +119,8 @@ button {
 
 #player {
   vertical-align: middle;
+  margin: 0 auto;
+  display: block;
 }
 
 #logo {
@@ -155,24 +158,28 @@ button {
   visibility: visible;
   width: 30vw;
   min-width: 642px;
-  height: 10vh;
-  min-height: 55px;
+  min-height: 220px;
   vertical-align: middle;
   margin-left: auto;
   margin-right: auto;
   overflow: visible;
 }
 
+#chat-title {
+  min-height: 50px;
+}
+
 #message-box {
   width: auto;
-  height: 54%;
+  min-height: 400px;
   margin: 0 auto;
 }
 
 #messenger-box {
-  height: 14vh;
+  min-height: 130px;
+  position: relative;
 }
 
 #friends-online-box {
-  height: 6%;
+  min-height: 60px;
 }
