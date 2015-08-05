@@ -3,7 +3,7 @@ var user = prompt("please enter name:");
 var username = user;
 var socket = io();
 socket.emit('connected', [user, '>>> ' + user + ' has connected']);
-socket.on('hostStart', function(time, user) {
+socket.on('hostStart', function(time, user, videoTime) {
 
     // console.log('should start');
 
@@ -12,11 +12,12 @@ socket.on('hostStart', function(time, user) {
     // console.log('response ' + time);
     // player.playVideo();
     console.log(user, username, 'play');
-    if (user != username) {
-    	playVideo();
-    	pauseVideo();
-    	// player.pauseVideo();
-    }
+    // if (user != username) {
+
+
+    // 	// player.pauseVideo();
+    // }
+    player.seekTo(videoTime, true);
     setTimeout(playVideo, time - new Date().getTime());
 
 });

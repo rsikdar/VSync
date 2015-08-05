@@ -88,17 +88,26 @@ io.on('connection', function(socket){
 		}
 	});
 
-	socket.on('play', function(user){
+
+
+
+
+
+
+	socket.on('play', function(user, videoTime){
 
 		setTimeout(
 			function() {
-				io.emit('hostStart', new Date().getTime() + 1000, user);
+				io.emit('hostStart', new Date().getTime() + 1000, user, videoTime);
 			}, 100);
 	});
 
 	socket.on('pause', function(videoTime, user){
 		// console.log(user, 'back end');
+		setTimeout(
+			function() {
 		io.emit('hostStop', videoTime, user);
+		}, 100);
 	});
 
 	socket.on('ready', function(user){
