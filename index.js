@@ -11,10 +11,11 @@ app.use(session({
 var all_users = [];
 var users_typing = [];
 var users_text_entered = [];
+peopleReady = 0;
 app.get('/', function(req, res) {
 	sess = req.session;
 	sess.user = 'unknown';
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/cards.html');
 });
 
 app.get('/*.js', function(req, res) {
@@ -24,6 +25,12 @@ app.get('/*.js', function(req, res) {
 app.get('/*.css', function(req, res) {
     res.sendFile(__dirname + req.url);
 });
+
+app.all('*', function(req, res) {
+	// console.log('wft');
+    res.sendFile(__dirname + req.url);
+});
+
 
 io.on('connection', function(socket){
 	socket.on('chat message', function(msg){
@@ -81,8 +88,40 @@ io.on('connection', function(socket){
 		}
 	});
 
+
+
+
+
+
+
+	socket.on('play', function(user, videoTime){
+
+		setTimeout(
+			function() {
+				io.emit('hostStart', new Date().getTime() + 1000, user, videoTime);
+			}, 100);
+	});
+
+	socket.on('pause', function(videoTime, user){
+		// console.log(user, 'back end');
+		setTimeout(
+			function() {
+		io.emit('hostStop', videoTime, user);
+		}, 100);
+	});
+
+	socket.on('ready', function(user){
+		peopleReady++;
+		if (peopleReady % 2 === 0) {
+
+			setTimeout(function() {
+				io.emit('firstStart', new Date().getTime() + 1300);
+			}, 1000);
+		}
+	});
+
 });
 
-http.listen(3000, function(){
-	console.log('listening on port 3000');
+http.listen(8081, function(){
+	console.log('listening on port 8081');
 });

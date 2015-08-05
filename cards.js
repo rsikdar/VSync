@@ -1,11 +1,12 @@
 
+
 function startVideo(video_url) {
     var info = video_url.match(/\=(.*?)$/);
     console.log(info);
     if (info.length > 1) {
         console.log(info[1]);
         //How do I show that player is already defined
-        player.loadVideoById(info[1], 5, "large")
+        player.loadVideoById(info[1], 5, "large");
     }
 }
 

@@ -16,7 +16,7 @@ function blur_true() {
 }
 
 function disable_notif() {
-    blur = false
+    blur = false;
     $(document).attr("title", 'chat');
 }
 
@@ -42,13 +42,13 @@ $('#m').keypress(function () {
         }
 
     }, 2000);
-    
+
 });
 //checking if text is empty (user deletes text after typing) and resets
 setInterval(function(){
             var form_text = document.forms["Form"]["m"].value;
             if (form_text === null || form_text === ""){
-                console.log('no text entered', form_text);
+                // console.log('no text entered', form_text);
                 socket.emit('typing_remove', username);
                 socket.emit('text_entered_remove', username);
         }
@@ -98,7 +98,7 @@ function generate_typing_status(element, list, text, text1){
         } else {
         txt = txt + ' and ' + list[list.length - 1] + text1;
         }
-        
+
     }
     document.getElementById(element).innerHTML  = txt;
 }
