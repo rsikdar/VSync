@@ -16,7 +16,7 @@ function blur_true() {
 }
 
 function disable_notif() {
-    blur = false
+    blur = false;
     $(document).attr("title", 'chat');
 }
 
@@ -137,4 +137,3 @@ socket.on('connect and disconnect', function(msg, all_users){
     generate_friends(all_users);
     notification();
 });
-

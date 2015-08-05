@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+
+<head>
     <link type="text/css" rel="stylesheet" href="cards.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -14,41 +15,45 @@
     <script type="text/javascript" src = "videoFunctions.js"></script>
     <script type="text/javascript" src = "videoSetup.js"></script>
   </head>
-  <body>
+<body>
     <div class="card" id="page-container">
-      <div class="card" id="left-container">
-        <div class="card" id="upper-box">
-          <div id="search-bar">
-            <span class="icon"><i class="fa fa-search-plus"></i></span>
-            <input type="search" id="search" placeholder="Search..." />
-          </div>
-          <div id="logo">
-            <h1>VSync</h1>
-          </div>
-        </div>
-        <div class="card" id="video-box">
-          <div id="player"></div>
-        </div>
-        <div class="card" id="lower-box">RANDOM ASS BOX</div>
-      </div>
-      <div class="card" id="right-container">
-        <div class="card" id="chat-box">
-            <div id="chat-title">
-              <h1>Chat</h1>
+        <div class="card" id="left-container">
+            <div class="card" id="center-panels">
+                <div class="card" id="upper-box">
+                    <div id="search-bar">
+                        <span class="icon"><i class="fa fa-search-plus"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                    <div id="logo">
+                        <h1>VSync</h1>
+                    </div>
+                </div>
+                <div class="card" id="video-box">
+                    <div id="player"></div>
+                </div>
+                <div class="card" id="lower-box">RANDOM ASS BOX</div>
+              </div>
             </div>
-            <hr></hr>
-            <div id="friends-online-box">(People Online)</div>
-            <hr></hr>
-            <div id="message-box"></div>
-            <hr></hr>
-            <form id="messenger-box">
-              <textarea></textarea>
-              <button><h2>Send</h2></button>
-            </form>
+
+            <div class="card" id="right-container">
+              <div class="card" id="chat-panel">
+                <div id="chat-title">
+                    <h1>Chat</h1>
+                </div>
+                <hr></hr>
+                <div id="friends-online-box">(People Online)</div>
+                <hr></hr>
+                <div id="message-box"></div>
+                <hr></hr>
+                <form id="messenger-box">
+                    <textarea></textarea>
+                    <button>
+                        <h2>Send</h2></button>
+                </form>
+            </div>
         </div>
-      </div>
 
     </div>
-  </body>
+</body>
 
 </html>
