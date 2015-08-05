@@ -25,7 +25,7 @@ hr {
 textarea {
     width: 50%;
     height: 15vh;
-    min-height: 120px;
+    min-height: 100px;
     display: inline-block;
     box-sizing: border-box;
     resize: none;
@@ -36,7 +36,7 @@ textarea {
 button {
     width: 40%;
     height: 15vh;
-    min-height: 120px;
+    min-height: 100px;
     display: inline-block;
     float: right;
     background-color: lightblue;
@@ -89,11 +89,14 @@ button {
     box-sizing: border-box;
     margin: 1em;
     padding: 1.5em;
-    height: 90vh;
-    min-height: 698px;
+    height: 94vh;
+    min-height: 505px;
+    min-width: 30s0px;
     visibility: visible;
     overflow: visible;
+    position: relative;
     background-color: white;
+    bottom: 0;
 }
 #center-panels {
     box-sizing: border-box;
@@ -170,11 +173,16 @@ button {
 }
 #message-box {
     width: auto;
-    min-height: 45vh;
+    height: 45vh;
+    min-height: 200px;
     margin: 0 auto;
 }
 #messenger-box {
-    min-height: 12vh;
+    align-self: center;
+    position: absolute;
+    bottom: 1em;
+    left: 1.5em;
+    right: 1.5em;
 }
 #friends-online-box {
     min-height: 5vh;
