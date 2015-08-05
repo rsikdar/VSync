@@ -98,7 +98,9 @@ io.on('connection', function(socket){
 
 		setTimeout(
 			function() {
-				io.emit('hostStart', new Date().getTime() + 1000, user, videoTime);
+				var time = new Date().getTime();
+				// console.log(time, 'backend start time');
+				io.emit('hostStart', time + 1000, user, videoTime);
 			}, 100);
 	});
 
@@ -115,7 +117,8 @@ io.on('connection', function(socket){
 		if (peopleReady % 2 === 0) {
 
 			setTimeout(function() {
-				io.emit('firstStart', new Date().getTime() + 1300);
+				var time = new Date().getTime();
+				io.emit('firstStart', time + 1300);
 			}, 1000);
 		}
 	});

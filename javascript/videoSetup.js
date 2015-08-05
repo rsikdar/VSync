@@ -63,7 +63,7 @@ function startVideo(video_url) {
       //interrupts the ignore otherwise
       return;
     }
-    console.log(ignore, event);
+    // console.log(ignore, event);
     if (ignore) {
       ignore = false;
       return;
