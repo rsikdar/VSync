@@ -1,7 +1,5 @@
-
+var user = prompt("Bitch Identification:");
 var params = getJsonFromUrl();
-
-var user = prompt("please enter name:");
 var username = user;
 var socket = io();
 socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId, new Date().getTime()]);
