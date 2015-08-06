@@ -13,8 +13,8 @@ socket.on('hostStart', function(time, user, videoTime) {
     // console.log(player);
     // console.log('response ' + time);
     // player.playVideo();
-    // console.log(new Date().getTime(), "time of reach")
-    // console.log(time, 'to play at');
+    console.log(new Date().getTime(), "time of reach")
+    console.log(time, 'to play at');
     // if (user != username) {
 
 

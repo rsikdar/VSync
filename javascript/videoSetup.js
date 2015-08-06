@@ -56,6 +56,7 @@ function startVideo(video_url) {
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     playVideo(pauseVideo);
+    // setTimeout(pauseVideo, 1000);
     // socket.emit('connect', new Date.getTime());
     // pauseVideo();
     // if (player.getVideoLoadedFraction() > .4) {

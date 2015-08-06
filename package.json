@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "client-sessions": "^0.7.0",
+    "ejs": "^2.3.3",
     "express": "^4.10.6",
     "socket.io": "^1.2.1"
   }
 }
-
