@@ -1,5 +1,5 @@
 
-var user = prompt("please enter name:");
+var user = prompt("Bitch Identification:");
 var username = user;
 var socket = io();
 socket.emit('connected', [user, '>>> ' + user + ' has connected']);
