@@ -1,8 +1,10 @@
 
+var params = getJsonFromUrl();
+
 var user = prompt("please enter name:");
 var username = user;
 var socket = io();
-socket.emit('connected', [user, '>>> ' + user + ' has connected']);
+socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId, new Date().getTime()]);
 socket.on('hostStart', function(time, user, videoTime) {
 
     // console.log('should start');
@@ -11,8 +13,8 @@ socket.on('hostStart', function(time, user, videoTime) {
     // console.log(player);
     // console.log('response ' + time);
     // player.playVideo();
-    console.log(new Date().getTime(), "time of reach")
-    console.log(time, 'to play at');
+    // console.log(new Date().getTime(), "time of reach")
+    // console.log(time, 'to play at');
     // if (user != username) {
 
 

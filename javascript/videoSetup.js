@@ -1,3 +1,16 @@
+
+function getJsonFromUrl() {
+  var query = location.search.substr(1);
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+var params = getJsonFromUrl();
+// console.log(res);
+
 function startVideo(video_url) {
 	var info = video_url.match(/\=(.*?)$/);
 	console.log(info);
@@ -24,7 +37,7 @@ function startVideo(video_url) {
     player = new YT.Player('player', {
       height: '360',
       width: '640',
-      videoId: 'Awf45u6zrP0',
+      videoId: params.vId,
       controls: 0,
       playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
       events: {
@@ -43,6 +56,7 @@ function startVideo(video_url) {
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
     playVideo(pauseVideo);
+    // socket.emit('connect', new Date.getTime());
     // pauseVideo();
     // if (player.getVideoLoadedFraction() > .4) {
     //   socket.emit('ready');
