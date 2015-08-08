@@ -39,6 +39,7 @@ function startVideo(video_url) {
       width: '640',
       videoId: params.vId,
       controls: 0,
+      autoPlay: 1,
       playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
       events: {
         'onReady': onPlayerReady,
@@ -55,7 +56,9 @@ function startVideo(video_url) {
   // var initialize = false;
   // 4. The API will call this function when the video player is ready.
   function onPlayerReady(event) {
-    playVideo(pauseVideo);
+    // playVideo(pauseVideo,);
+    // pauseVideo();
+    player.seekTo(0);
     // setTimeout(pauseVideo, 1000);
     // socket.emit('connect', new Date.getTime());
     // pauseVideo();
@@ -69,6 +72,7 @@ function startVideo(video_url) {
   //    The function indicates that when playing a video (state=1),
   //    the player should play for six seconds and then stop.
   var done = false;
+  var initialize = true;
   function onPlayerStateChange(event) {
     // if (event.data == YT.PlayerState.PLAYING && !done) {
     //   setTimeout(stopVideo, 6000);
@@ -84,26 +88,44 @@ function startVideo(video_url) {
       return;
     }
     if (event.data == 1) { //video is now playing
+      if (initialize) {
+        initialize = false;
+        pauseVideo();
+        player.seekTo(0);
+        return;
+      }
       ignore = true;
       player.pauseVideo();
-      socket.emit('play', username, player.getCurrentTime());
+      var time = player.getCurrentTime();
+      //youtube doesnt restart second if you call seek to on the second its at (i think)
+      player.seekTo(time - 1, true);
+      player.seekTo(time, true);
+      socket.emit('play', username, time);
     } else if (event.data == 2) { //video is now paused
       console.log('sending pause');
       socket.emit('pause', player.getCurrentTime(), username);
     }
   }
-  function playVideo(callback) {
+  function playVideo(callback, delay) {
     ignore = true;
     player.playVideo();
     if (callback != null) {
-      callback();
+      if (delay != null) {
+        setTimeout(callback, delay);
+      } else {
+        callback();
+      }
     }
   }
-  function pauseVideo(callback) {
+  function pauseVideo(callback, delay) {
     ignore = true;
     player.pauseVideo();
     if (callback != null) {
-      callback();
+      if (delay != null) {
+        setTimeout(callback, delay);
+      } else {
+        callback();
+      }
     }
   }
   function stopVideo() {
