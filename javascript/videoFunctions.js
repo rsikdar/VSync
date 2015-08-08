@@ -2,9 +2,14 @@ var user = prompt("Bitch Identification:");
 var params = getJsonFromUrl();
 var username = user;
 var socket = io();
-var clientSend = new Date().getTime();
+var clientSend;
 var timeToAdd = 0;
-socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId]);
+startTimeDiffCheck();
+
+function startTimeDiffCheck(){
+    clientSend = new Date().getTime();
+    socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId]);
+}
 socket.on('returnTime', function(data) {
     console.log(username);
     var clientReach = new Date().getTime();
@@ -13,6 +18,9 @@ socket.on('returnTime', function(data) {
     var roundTripTime = clientReach - clientSend - (serverSend - serverReach);
     var timeToServer = roundTripTime * 0.5;
     timeToAdd = timeToServer + serverSend - clientReach;
+    console.log('clientSend, serverReach, serverSend, clientReach')
+    console.log(clientSend, serverReach, serverSend, clientReach);
+    console.log(timeToAdd);
 
 })
 socket.on('hostStart', function(time, videoTime) {
@@ -25,7 +33,7 @@ socket.on('hostStart', function(time, videoTime) {
     // player.playVideo();
     // console.log(new Date().getTime(), "time of reach")
     // console.log(time, 'to play at');
-    console.log(timeToAdd, 'delay');
+    console.log(time, new Date().getTime(), timeToAdd, 'delay');
     // if (user != username) {
 
 
@@ -33,7 +41,8 @@ socket.on('hostStart', function(time, videoTime) {
     // }
     // player.seekTo(videoTime - 1, true);
     // player.seekTo(videoTime, true);
-    setTimeout(playVideo, time - new Date().getTime() + timeToAdd);
+    console.log('timeout', time - (new Date().getTime() + timeToAdd));
+    setTimeout(playVideo, time - (new Date().getTime() + timeToAdd));
 
 });
 

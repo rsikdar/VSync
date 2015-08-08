@@ -134,7 +134,7 @@ io.on('connection', function(socket){
 		// 	function() {
 				var time = new Date().getTime();
 				// console.log(time, 'backend start time');
-				io.to(socket.room).emit('hostStart', time + 1000, videoTime);
+				io.to(socket.room).emit('hostStart', time + 600, videoTime);
 			// }, 300);
 	});
 
