@@ -11,9 +11,11 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <audio id='sound1' src="http://themushroomkingdom.net/sounds/wav/smw/smw_coin.wav" preload='auto' autostart="false" width="0" height="0"
         enablejavascript="true"></audio>
-    <!-- <script type="text/javascript" src = "javascript/chatFunctions.js"></script> -->
+
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.0/randomColor.min.js"></script>
     <script type="text/javascript" src = "javascript/videoSetup.js"></script>
     <script type="text/javascript" src = "javascript/videoFunctions.js"></script>
+    <script type="text/javascript" src = "javascript/chatFunctions.js"></script>
   </head>
 <body>
     <div class="card" id="page-container">
@@ -44,12 +46,13 @@
                 <hr></hr>
                 <div id="friends-online-box">(People Online)</div>
                 <hr></hr>
-                <div id="message-box"></div>
-
-                <form id="messenger-box">
+                <div id="message-box">
+                    <ul id='messages'></ul>
+                </div>
+                <form id="messenger-box" action='' name = "Form">
                   <hr></hr>
-                    <textarea></textarea>
-                    <button>
+                    <textarea id='message'></textarea>
+                    <button type="button" id="send-button">
                         <h2>Send</h2></button>
                 </form>
             </div>

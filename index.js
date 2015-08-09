@@ -42,8 +42,9 @@ app.all('*', function(req, res) {
 
 
 io.on('connection', function(socket){
-	socket.on('chat message', function(msg){
-		io.emit('chat message', msg);
+	socket.on('chat message', function(msg, username){
+		// console.log('chat message reached');
+		io.emit('chat message', msg, username);
 	});
 	socket.on('connected', function(data){
 
@@ -68,7 +69,7 @@ io.on('connection', function(socket){
 		req.user = data[0];
 		// all_users.push(data[0]);
 		io.sockets.in(socket.room).emit('sync', room.all_users[0], data[0]);
-		io.sockets.in(socket.room).emit('connect and disconnect', data[1], room.all_users);
+		io.sockets.in(socket.room).emit('connect and disconnect', data[1], data[0], room.all_users);
 	});
 
 	socket.on('getTime', function(){

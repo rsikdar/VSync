@@ -118,7 +118,7 @@ function startVideo(video_url) {
   var done = false;
   var initialize = true;
   function onPlayerStateChange(event) {
-    console.log(ignore, event.data);
+    // console.log(ignore, event.data);
     // if (event.data == YT.PlayerState.PLAYING && !done) {
     //   setTimeout(stopVideo, 6000);
     //   done = true;
