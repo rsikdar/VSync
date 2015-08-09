@@ -9,6 +9,14 @@ function getJsonFromUrl() {
   return result;
 }
 var params = getJsonFromUrl();
+var id = params.rId;
+// var roomIdHash = id.substring(0,8);
+// var hashids = new Hashids("ryan is a bitch");
+
+// var roomId = hashids.decode(roomIdHash);
+var videoId = id.substring(9);
+// console.log(videoId);
+// params.vId = videoId;
 // console.log(res);
 
 function startVideo(video_url) {
@@ -37,7 +45,7 @@ function startVideo(video_url) {
     player = new YT.Player('player', {
       height: '360',
       width: '640',
-      videoId: params.vId,
+      videoId: videoId,
       controls: 0,
       autoPlay: 1,
       playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
@@ -184,7 +192,7 @@ function startVideo(video_url) {
   }
 
   function playVideo(callback, delay) {
-    console.log('state', getState());
+    // console.log('state', getState());
     if (getState() != 1) {
       ignore = true;
       player.playVideo();
@@ -198,7 +206,7 @@ function startVideo(video_url) {
     }
   }
   function pauseVideo(callback, delay) {
-    console.log('state', getState());
+    // console.log('state', getState());
     if (getState() != 2) {
       ignore = true;
       player.pauseVideo();

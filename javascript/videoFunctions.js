@@ -5,9 +5,14 @@ var socket = io();
 var clientSend;
 var timeToAdd = 0;
 // var listOfTimes = new Array();
+var id = params.rId;
+var roomIdHash = id.substring(0,9);
+var hashids = new Hashids("ryan is a bitch", 9);
+var roomId = hashids.decode(roomIdHash)[0];
+// console.log(roomId, 'roomid');
 startTimeDiffCheck();
 function startSync() {
-    socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId]);
+    socket.emit('connected', [user, '>>> ' + user + ' has connected', roomId]);
 }
 function startTimeDiffCheck(){
     clientSend = new Date().getTime();

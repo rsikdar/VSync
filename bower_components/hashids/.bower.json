@@ -1,0 +1,23 @@
+{
+  "name": "hashids",
+  "version": "1.0.2",
+  "main": "lib/hashids.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/ivanakimov/hashids.js",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.2",
+    "commit": "6d15e51174ca875ae1fdf71e5d23d97a2f78f8be"
+  },
+  "_source": "git://github.com/ivanakimov/hashids.js.git",
+  "_target": "~1.0.2",
+  "_originalSource": "hashids",
+  "_direct": true
+}
