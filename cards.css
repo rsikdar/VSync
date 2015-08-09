@@ -94,6 +94,8 @@ button {
   height: 15px;
   z-index: 5;
   text-align: center;
+  display: none;
+
 }
 #chat-panel {
     box-sizing: border-box;

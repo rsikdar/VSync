@@ -46,29 +46,46 @@ io.on('connection', function(socket){
 		io.emit('chat message', msg);
 	});
 	socket.on('connected', function(data){
-		timeOfServerReach = new Date().getTime();
+
 		socket.room = data[2];
 		socket.join(socket.room);
-		all_rooms[socket.room] = new Array();
-		var room = all_rooms[socket.room]
-		room.users_typing = new Array();
-		room.users_text_entered = new Array();
-		room.all_users = new Array();
+		var room;
+		if (all_rooms[socket.room] === undefined) {
+			all_rooms[socket.room] = new Array();
+			room = all_rooms[socket.room]
+			room.users_typing = new Array();
+			room.users_text_entered = new Array();
+			room.all_users = new Array();
+			// room.all_sockets = new Array();
+		} else {
+			room = all_rooms[socket.room]
+		}
+
 		room.all_users.push(data[0]);
+		// room.all_sockets.push(socket);
+
 		var req = socket.request;
 		req.user = data[0];
 		// all_users.push(data[0]);
-		socket.emit('returnTime', [timeOfServerReach, new Date().getTime()]);
+		io.sockets.in(socket.room).emit('sync', room.all_users[0], data[0]);
 		io.sockets.in(socket.room).emit('connect and disconnect', data[1], room.all_users);
 	});
 
+	socket.on('getTime', function(){
+		timeOfServerReach = new Date().getTime();
+		socket.emit('returnTime', [timeOfServerReach, new Date().getTime()]);
+	})
+
 	socket.on('disconnect', function(){
-		// var index1 = all_users.indexOf(socket.request.user);
-		// var index2 = users_typing.indexOf(socket.request.user);
-		// var index3 = users_text_entered.indexOf(socket.request.user);
-		// all_users.splice(index1, 1);
-		// users_typing.splice(index2, 1);
-		// users_text_entered.splice(index3, 1);
+		room = all_rooms[socket.room];
+		if (room != undefined) {
+			var index1 = room.all_users.indexOf(socket.request.user);
+			var index2 = room.users_typing.indexOf(socket.request.user);
+			var index3 = room.users_text_entered.indexOf(socket.request.user);
+			room.all_users.splice(index1, 1);
+			room.users_typing.splice(index2, 1);
+			room.users_text_entered.splice(index3, 1);
+		}
 		// io.emit('connect and disconnect', socket.request.user + ' has disconnected', all_users);
 		// io.to(socket.room).emit('text_entered', users_text_entered, users_typing);
 	});

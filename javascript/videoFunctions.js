@@ -4,25 +4,61 @@ var username = user;
 var socket = io();
 var clientSend;
 var timeToAdd = 0;
+// var listOfTimes = new Array();
 startTimeDiffCheck();
-
-function startTimeDiffCheck(){
-    clientSend = new Date().getTime();
+function startSync() {
     socket.emit('connected', [user, '>>> ' + user + ' has connected', params.rId]);
 }
+function startTimeDiffCheck(){
+    clientSend = new Date().getTime();
+    socket.emit('getTime');
+}
 socket.on('returnTime', function(data) {
-    console.log(username);
+    // console.log(username);
     var clientReach = new Date().getTime();
     var serverReach = data[0];
     var serverSend = data[1];
     var roundTripTime = clientReach - clientSend - (serverSend - serverReach);
     var timeToServer = roundTripTime * 0.5;
     timeToAdd = timeToServer + serverSend - clientReach;
-    console.log('clientSend, serverReach, serverSend, clientReach')
-    console.log(clientSend, serverReach, serverSend, clientReach);
-    console.log(timeToAdd);
+    // listOfTimes.push(timeToAdd);
+    // console.log('clientSend, serverReach, serverSend, clientReach')
+    // console.log(clientSend, serverReach, serverSend, clientReach);
+    // console.log(timeToAdd);
+    // update and regularize the time to add
+    //
 
-})
+});
+socket.on('sync', function(userToPause, userJoined) {
+    console.log('syncing attempt')
+    //replace html and show status bar
+    if (userToPause == userJoined) {
+        //first person in lobby then
+        console.log('no sync needed');
+        return;
+    }
+    if (username == userJoined) {
+        $('#status-bar').html('Syncing');
+    } else {
+        $('#status-bar').html('Syncing: ' + userJoined);
+    }
+    $('#status-bar').show();
+    console.log(username, userToPause, userJoined);
+    if (username == userToPause && userJoined != username) {
+        // console.log(player);
+        // player.pauseVideo();
+        if (getState() == 1) {
+            pauseVideoTrigger();
+            setTimeout(playVideoTrigger, 500);
+        } else {
+            console.log('sending pause for sync');
+            socket.emit('pause', player.getCurrentTime(), username);
+        }
+    }
+    setTimeout(function() {
+        $('#status-bar').hide();
+    }, 2000)
+});
 socket.on('hostStart', function(time, videoTime) {
 
     // console.log('should start');
@@ -33,15 +69,15 @@ socket.on('hostStart', function(time, videoTime) {
     // player.playVideo();
     // console.log(new Date().getTime(), "time of reach")
     // console.log(time, 'to play at');
-    console.log(time, new Date().getTime(), timeToAdd, 'delay');
+    // console.log(time, new Date().getTime(), timeToAdd, 'delay');
     // if (user != username) {
 
 
     // 	// player.pauseVideo();
     // }
-    // player.seekTo(videoTime - 1, true);
-    // player.seekTo(videoTime, true);
-    console.log('timeout', time - (new Date().getTime() + timeToAdd));
+    player.seekTo(videoTime - 1, true);
+    player.seekTo(videoTime, true);
+    // console.log('timeout', time - (new Date().getTime() + timeToAdd));
     setTimeout(playVideo, time - (new Date().getTime() + timeToAdd));
 
 });
