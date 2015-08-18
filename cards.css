@@ -50,6 +50,25 @@ button {
     width: auto;
     height: auto;
 }
+#page-container {
+    margin: 0 auto;
+    padding: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("img/white_tiger.jpg") no-repeat center center fixed;
+    //background-color: rgba(160, 210, 240, 0.99);
+    overflow: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 #left-container {
     margin: .2em;
     margin-left: 1em;
@@ -75,15 +94,6 @@ button {
     position: absolute;
     visibility: hidden;
 }
-#page-container {
-    margin: 0 auto;
-    padding: 0;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(160, 210, 240, 0.99);
-    overflow: scroll;
-}
 #status-bar {
   position: fixed;
   margin: 0 auto;
@@ -101,7 +111,7 @@ button {
     margin: 1em;
     padding: 1.5em;
     height: 92.5vh;
-    min-height: 505px;
+    min-height: 485px;
     min-width: 300px;
     visibility: visible;
     overflow: visible;
