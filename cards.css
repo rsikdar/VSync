@@ -58,11 +58,10 @@ button {
     height: 100vh;
     background:
     linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
     ),
-    url("img/white_tiger.jpg") no-repeat center center fixed;
-    //background-color: rgba(160, 210, 240, 0.99);
+    url("img/flying_birds.jpg") no-repeat center center fixed;
     overflow: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
