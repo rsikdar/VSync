@@ -6,7 +6,7 @@ body {
       rgba(0, 0, 0, 0.00),
       rgba(0, 0, 0, 0.00)
     ),
-    url("img/night_city.jpg") no-repeat center center fixed;
+    url("img/beach_umbrella.jpg") no-repeat center center fixed;
     overflow: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -18,14 +18,14 @@ body {
 #header {
     margin: auto;
     text-align: center;
-    color: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
     font-size: 2em;
     font-weight: 700;
     margin-top: 5%;
 }
 
 #searchBar {
-    background-color: rgb(240, 240, 240);
+    background-color: white;
     width: 40%;
     height: 2em;
     border-width: 1px;
@@ -48,7 +48,7 @@ body {
 }
 #search {
     display: inline-block;
-    background-color: rgb(240, 240, 240);
+    background-color: white;
     margin-left: 3%;
     margin-top: 1%;
     width: 95%;
@@ -59,7 +59,7 @@ body {
 }
 #description {
     text-align: center;
-    color: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
     margin: 3%;
     font-size: 1.5em;
 }
