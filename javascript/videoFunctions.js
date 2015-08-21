@@ -82,6 +82,7 @@ socket.on('hostStart', function(time, videoTime) {
     // }
     player.seekTo(videoTime - 1, true);
     player.seekTo(videoTime, true);
+    console.log(timeToAdd);
     // console.log('timeout', time - (new Date().getTime() + timeToAdd));
     setTimeout(playVideo, time - (new Date().getTime() + timeToAdd));
 

@@ -1,59 +1,81 @@
 
-/*body {
-    background-image: url("http://kugantharan.com/wp-content/uploads/2013/02/Wallpaper-Abstract-Abstraction-Texture-Texture-Background-Bokeh-Blue.jpg");
+body {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url("img/beach_umbrella.jpg") no-repeat center center fixed;
+    overflow: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: visible;
 }
-*/
+
 
 #header {
     margin: auto;
     text-align: center;
+    color: rgb(50, 50, 50);
     font-size: 2em;
-    margin-top: 2%;
+    font-weight: 700;
+    margin-top: 5%;
 }
 
 #searchBar {
-    background-color: rgb(250, 249, 249);
+    background-color: white;
     width: 40%;
     height: 2em;
     border-width: 1px;
     border-style: solid;
-    border-color: rgb(143, 172, 236);
     border-radius: 100px;
+    border-color: white;
     margin: 2% auto 2% auto;
-    /* padding-bottom: .5em; */
-    /* padding-top: 1em; */
-}
+    padding-bottom: 1em;
 
+}
+#searchImageHolder {
+  display: inline-block;
+  height: 100%;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  top: 0;
+}
 #searchImage {
     width: 1em;
-    margin: 1% 2% 1% 2%;
-    display: inline;
 }
-#searchBar p {
+#search {
     display: inline-block;
-    margin: .5em;
-    margin-top: 0;
-    margin-bottom: 0;
+    background-color: white;
+    margin-left: 3%;
+    margin-top: 1%;
+    width: 95%;
+    height: 100%;
+    padding: 0;
     font-size: 1.5em;
+    color: rgb(34, 34, 34);
 }
 #description {
     text-align: center;
+    color: rgb(50, 50, 50);
     margin: 3%;
     font-size: 1.5em;
 }
 
 input {
-    background-color: rgb(250, 249, 249);
+
     border: none;
     font-size: 1.25em;
     text-align: left;
     display: inline-block;
     width: inherit;
-    padding-bottom: 0;
-    padding-top: 0;
+
     height: 80%;
     margin: 0 auto;
-    /* margin-bottom: 20em; */
+    top: 0;
+
 }
 
 input:focus,

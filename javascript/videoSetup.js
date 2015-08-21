@@ -170,6 +170,7 @@ function startVideo(video_url) {
       socket.emit('play', username, time);
       console.log('sent play');
     } else if (event.data == 2) { //video is now paused
+      startTimeDiffCheck();
       console.log('sending pause');
       socket.emit('pause', player.getCurrentTime(), username);
     } else if (event.data == 0) {
