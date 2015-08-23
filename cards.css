@@ -202,12 +202,13 @@ button {
     width: 30vw;
     position: absolute;
     min-width: 642px;
-    min-height: 100px;
+    min-height: 82px;
     vertical-align: middle;
     margin-left: .25em;
     margin-right: .25em;
     margin-bottom: 0;
     bottom: 0;
+    margin-top: 0;
     overflow: visible;
 }
 #chat-title {

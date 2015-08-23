@@ -13,8 +13,10 @@
             <h1>VSync</h1>
         </div>
         <div id = 'searchBar' >
-            <img id='searchImage' src = 'http://static1.squarespace.com/static/528e87f3e4b0ef5d1e49355e/t/5374ab4fe4b060b2a3d1a69c/1400154961532/search-icon-01.jpg'>
-            <input id = 'search' onfocus="if (this.value=='search') this.value = ''" type="text" value="search"></input>
+            <!--<div id="searchImageHolder">
+              <img id='searchImage' src = 'http://static1.squarespace.com/static/528e87f3e4b0ef5d1e49355e/t/5374ab4fe4b060b2a3d1a69c/1400154961532/search-icon-01.jpg'>
+            </div>-->
+            <input type='search' id='search' onfocus="if (this.value=='search') this.value = ''"></input>
         </div>
         <div id = 'ytThumbs' style="list-style: none;"></div>
         <script src="bower_components/hashids/lib/hashids.min.js"></script>
@@ -37,6 +39,9 @@
             }
             var params = getJsonFromUrl();
             var query = params.q;
+            $(function() {
+                $('#search').val(query);
+            });
             // query = 'dog';
             // var results = httpGet('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + query + '&type=video&key=AIzaSyCKqYmAyi927D2FAJFXxJtseqjm4hpgaj4');
             key = 'AIzaSyCKqYmAyi927D2FAJFXxJtseqjm4hpgaj4';
