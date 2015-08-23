@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    font-family: Cambria;
+    font-weight: normal;
+}
+h2 {
+    text-align: center;
+    font-family: Cambria;
+    font-weight: normal;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+textarea {
+    width: 50%;
+    height: 15vh;
+    min-height: 100px;
+    display: inline-block;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    padding: 1em;
+    background-color: #DCDCDC;
+}
+button {
+    width: 40%;
+    height: 15vh;
+    min-height: 100px;
+    display: inline-block;
+    float: right;
+    background-color: rgba(160, 210, 240, 0.99);
+}
+.card {
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px #aaa;
+    background: white;
+    margin: 1em;
+    user-select: none;
+    width: auto;
+    height: auto;
+}
+#page-container {
+    margin: 0 auto;
+    padding: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("img/flying_birds.jpg") no-repeat center center fixed;
+    overflow: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#left-container {
+    margin: .2em;
+    margin-left: 1em;
+    padding: 0;
+    width: 65%;
+    min-width: 700px;
+    min-height: 819px;
+    height: auto;
+    border-radius: 0;
+    display: inline-block;
+    float: left;
+    visibility: hidden;
+}
+#right-container {
+    margin: .2em;
+    padding: 0;
+    min-width: 30%;
+    min-height: 819px;
+    border: none;
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    position: absolute;
+    visibility: hidden;
+}
+#status-bar {
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  padding: .5em;
+  width: 100%;
+  height: 15px;
+  z-index: 5;
+  text-align: center;
+  display: none;
+
+}
+#chat-panel {
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1.5em;
+    height: 92.5vh;
+    min-height: 485px;
+    min-width: 300px;
+    visibility: visible;
+    overflow: visible;
+    position: relative;
+    background-color: white;
+    bottom: 0;
+}
+#messages {
+    clear: both;
+    list-style-type: none;
+    margin: .1%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    padding: 0;
+
+}
+#messages li {
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 75%;
+}
+/*#messages li:nth-child(odd) {
+ background: #EBD6FF;
+}
+#messages li:nth-child(even) {
+    background: #CECEF8;
+}*/
+#center-panels {
+    box-sizing: border-box;
+    width: 746px;
+    height: 92.5vh;
+    min-height: 650px;
+    margin: 1em;
+    padding: 1.5em;
+    padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    position: relative;
+}
+#player {
+    vertical-align: middle;
+    margin: 0 auto;
+    display: block;
+}
+#logo {
+    display: inline-block;
+    float: right;
+}
+#search-bar {
+    display: inline-block;
+}
+#search {
+    padding: 1em;
+    margin-left: 1em;
+    background: #DCDCDC;
+    border: none;
+    outline: none;
+    font-size: 10pt;
+    color: #63717f;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+#upper-box {
+    visibility: visible;
+    width: 30vw;
+    min-width: 642px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1em;
+}
+#video-box {
+    margin: 1rem;
+    padding-top: 1em;
+    width: 30vw;
+    min-width: 640px;
+    min-height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: visible;
+    overflow: visible;
+    z-index: 2;
+}
+#lower-box {
+    visibility: visible;
+    width: 30vw;
+    position: absolute;
+    min-width: 642px;
+    min-height: 82px;
+    vertical-align: middle;
+    margin-left: .25em;
+    margin-right: .25em;
+    margin-bottom: 0;
+    bottom: 0;
+    margin-top: 0;
+    overflow: visible;
+}
+#chat-title {
+    min-height: 6.5vh;
+}
+#message-box {
+    width: auto;
+    height: 45vh;
+    min-height: 200px;
+    margin: 0 auto;
+    overflow: auto;
+}
+#messenger-box {
+    align-self: center;
+    position: absolute;
+    bottom: 1em;
+    left: 1.5em;
+    right: 1.5em;
+}
+#friends-online-box {
+    min-height: 5vh;
+}

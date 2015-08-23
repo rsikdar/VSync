@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="cards.css" />
+    <link rel="shortcut icon" href='/img/favicon.ico' type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bower_components/hashids/lib/hashids.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <audio id='sound1' src="http://themushroomkingdom.net/sounds/wav/smw/smw_coin.wav" preload='auto' autostart="false" width="0" height="0"
+        enablejavascript="true"></audio>
+
+    <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.0/randomColor.min.js"></script>
+    <script type="text/javascript" src = "javascript/videoSetup.js"></script>
+    <script type="text/javascript" src = "javascript/videoFunctions.js"></script>
+    <script type="text/javascript" src = "javascript/chatFunctions.js"></script>
+    <script type="text/javascript" src = "cards.js"></script>
+</head>
+<body>
+    <div class="card" id="page-container">
+      <div class="card" id="status-bar">I too, am a status bar</div>
+        <div class="card" id="left-container">
+            <div class="card" id="center-panels">
+                <div class="card" id="upper-box">
+                    <div id="search-bar">
+                        <span class="icon"><i class="fa fa-search-plus"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                    <div id="logo">
+                        <h1>VSync</h1>
+                    </div>
+                </div>
+                  <div class="card" id="video-box">
+                    <div id="player"></div>
+                  </div>
+                <div class="card" id="lower-box">RANDOM ASS BOX</div>
+              </div>
+            </div>
+
+            <div class="card" id="right-container">
+              <div class="card" id="chat-panel">
+                <div id="chat-title">
+                    <h1>Chat</h1>
+                </div>
+                <hr></hr>
+                <div id="friends-online-box">(People Online)</div>
+                <hr></hr>
+                <div id="message-box">
+                    <ul id='messages'></ul>
+                </div>
+                <form id="messenger-box" action='' name = "Form">
+                  <hr></hr>
+                    <textarea id='message'></textarea>
+                    <button type="button" id="send-button">
+                        <h2>Send</h2></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
