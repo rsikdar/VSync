@@ -24,7 +24,7 @@ hr {
 }
 textarea {
     width: 50%;
-    height: 14vh;
+    height: 13vh;
     min-height: 100px;
     display: inline-block;
     box-sizing: border-box;
@@ -35,7 +35,7 @@ textarea {
 }
 button {
     width: 40%;
-    height: 14vh;
+    height: 13vh;
     min-height: 100px;
     display: inline-block;
     float: right;
@@ -74,7 +74,7 @@ button {
     margin-right: 0;
     padding: 0;
     width: 65%;
-    min-width: 854px;
+    min-width: 926px;
     min-height: 819px;
     height: auto;
     border-radius: 0;
