@@ -24,7 +24,7 @@ hr {
 }
 textarea {
     width: 50%;
-    height: 15vh;
+    height: 14vh;
     min-height: 100px;
     display: inline-block;
     box-sizing: border-box;
@@ -35,7 +35,7 @@ textarea {
 }
 button {
     width: 40%;
-    height: 15vh;
+    height: 14vh;
     min-height: 100px;
     display: inline-block;
     float: right;
@@ -112,7 +112,7 @@ button {
     margin: 1em;
     padding: 1.5em;
     height: 92.5vh;
-    min-height: 520px;
+    min-height: 512px;
     min-width: 300px;
     visibility: visible;
     overflow: visible;
@@ -190,6 +190,7 @@ button {
 #video-box {
     margin: 1rem;
     padding-top: 1em;
+    padding-bottom: 1em;
     width: 30vw;
     min-width: 854px;
     min-height: 480px;
@@ -204,7 +205,7 @@ button {
     width: 30vw;
     position: absolute;
     min-width: 854px;
-    min-height: 64px;
+    min-height: 75px;
     margin-left: .05em;
     margin-bottom: 0;
     bottom: 0;
