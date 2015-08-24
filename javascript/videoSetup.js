@@ -48,7 +48,7 @@ function startVideo(video_url) {
       videoId: videoId,
       controls: 0,
       autoPlay: 1,
-      playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0, 'fs': 0 },
+      playerVars: { 'rel': 0, 'modestbranding': 1, 'frameborder': 0 },
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
