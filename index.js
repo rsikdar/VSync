@@ -19,14 +19,14 @@ app.get('/', function(req, res) {
 });
 
 
-app.get('/cards.html', function(req, res) {
+app.get('/vroom.html', function(req, res) {
 	// console.log(req.query);
 	var id = req.query['rId'];
-	var roomId = id.substring(0,8);
-	var videoId = id.substring(8);
+	// var roomId = id.substring(0,8);
+	// var videoId = id.substring(8);
 	// videoId = req.query['vId'];
 	 // {rId:roomId, vId: videoId}
-	res.render(__dirname + '/cards.html', {rId:roomId, vId: videoId});
+	res.render(__dirname + '/vroom.html');
 });
 
 app.get('/search.html', function(req, res) {

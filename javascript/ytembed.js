@@ -274,7 +274,7 @@ var ytEmbed = {
 
                 var roomHash = hashids.encode(Number(String(new Date().getTime()).substring(4)) + Math.floor((Math.random() * 100000) + 1));
                 // var roomId = id;
-                var url = '/cards.html?rId=' + roomHash + id;
+                var url = '/vroom.html?rId=' + roomHash + id;
                 // console.log(url);
                 // console.log(id);
                 // var url = '/cards.html?vId=' + id;

@@ -14,7 +14,13 @@ var id = params.rId;
 // var hashids = new Hashids("ryan is a bitch");
 
 // var roomId = hashids.decode(roomIdHash);
-var videoId = id.substring(9);
+var videoId;
+if (id === undefined) {
+  videoId = 'xtfEfO_BnoU';
+} else {
+  videoId = id.substring(9);
+  
+}
 // console.log(videoId);
 // params.vId = videoId;
 // console.log(res);
@@ -24,7 +30,7 @@ function startVideo(video_url) {
 	console.log(info);
 	if (info.length > 1)
 	{
-		console.log(info[1]);
+		// console.log(info[1]);
 		//How do I show that player is already defined
 		player.loadVideoById(info[1], 5, "large");
 	}
@@ -43,8 +49,8 @@ function startVideo(video_url) {
   var player;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-      height: '360',
-      width: '640',
+      height: '480',
+      width: '854',
       videoId: videoId,
       controls: 0,
       autoPlay: 1,
@@ -170,7 +176,7 @@ function startVideo(video_url) {
       socket.emit('play', username, time);
       console.log('sent play');
     } else if (event.data == 2) { //video is now paused
-      startTimeDiffCheck();
+      // startTimeDiffCheck();
       console.log('sending pause');
       socket.emit('pause', player.getCurrentTime(), username);
     } else if (event.data == 0) {
