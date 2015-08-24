@@ -71,9 +71,10 @@ button {
 #left-container {
     margin: .2em;
     margin-left: 1em;
+    margin-right: 0;
     padding: 0;
     width: 65%;
-    min-width: 700px;
+    min-width: 854px;
     min-height: 819px;
     height: auto;
     border-radius: 0;
@@ -83,6 +84,7 @@ button {
 }
 #right-container {
     margin: .2em;
+    margin-right: 0;
     padding: 0;
     min-width: 30%;
     min-height: 819px;
@@ -110,7 +112,7 @@ button {
     margin: 1em;
     padding: 1.5em;
     height: 92.5vh;
-    min-height: 485px;
+    min-height: 520px;
     min-width: 300px;
     visibility: visible;
     overflow: visible;
@@ -141,9 +143,9 @@ button {
 }*/
 #center-panels {
     box-sizing: border-box;
-    width: 746px;
+    width: 950px;
     height: 92.5vh;
-    min-height: 650px;
+    min-height: 652px;
     margin: 1em;
     padding: 1.5em;
     padding-top: 0;
@@ -189,8 +191,8 @@ button {
     margin: 1rem;
     padding-top: 1em;
     width: 30vw;
-    min-width: 640px;
-    min-height: 340px;
+    min-width: 854px;
+    min-height: 480px;
     margin-left: auto;
     margin-right: auto;
     visibility: visible;
@@ -201,11 +203,9 @@ button {
     visibility: visible;
     width: 30vw;
     position: absolute;
-    min-width: 642px;
-    min-height: 82px;
-    vertical-align: middle;
-    margin-left: .25em;
-    margin-right: .25em;
+    min-width: 854px;
+    min-height: 64px;
+    margin-left: .05em;
     margin-bottom: 0;
     bottom: 0;
     margin-top: 0;
