@@ -117,13 +117,14 @@ $(document).ready(function(){
     $('#message').bind('keypress', function(e) {
         // console.log(e.keyCode);
         if(e.keyCode==13){
-            sendChatMessage();
-
+            return sendChatMessage();
         }
+
     });
     $('#send-button').click(function(evt){
         // evt.preventDefault()
         sendChatMessage();
+
     });
 });
 function sendChatMessage() {
@@ -136,8 +137,8 @@ function sendChatMessage() {
     }
     // console.log('sending chat message');
     socket.emit('chat message', user + msg, username);
+    $('textarea').val(""); //clear text box
     // socket.emit('typing_remove', username); //remove person from typing list
-    $('#message').val(''); //clear text box
     return false;
 }
 
