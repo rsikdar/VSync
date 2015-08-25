@@ -1,7 +1,5 @@
 # VSync
-Video Sync
-
-Description:
+Video Sync:
 Watch videos with your friends! After searching the video, just share the url to invite other friends to watch!
 Currently hosted: vsync-env.elasticbeanstalk.com
 
