@@ -80,6 +80,7 @@ io.on('connection', function(socket){
 		var req = socket.request;
 		req.user = data[0];
 		// all_users.push(data[0]);
+		console.log(room.all_users);
 		io.sockets.in(socket.room).emit('sync', room.all_users[0], data[0]);
 		io.sockets.in(socket.room).emit('connect and disconnect', data[1], data[0], room.all_users);
 	});

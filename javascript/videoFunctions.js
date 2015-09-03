@@ -12,7 +12,7 @@ var roomId = hashids.decode(roomIdHash)[0];
 // console.log(roomId, 'roomid');
 startTimeDiffCheck();
 function startSync() {
-    socket.emit('connected', [user, '>>> ' + user + ' has connected', roomId]);
+    socket.emit('connected', [username, '>>> ' + username + ' has connected', roomId]);
 }
 function startTimeDiffCheck(){
     clientSend = new Date().getTime();
@@ -53,6 +53,7 @@ socket.on('sync', function(userToPause, userJoined) {
         // console.log(player);
         // player.pauseVideo();
         if (getState() == 1) {
+            // console.log('sync while play');
             pauseVideoTrigger();
             setTimeout(playVideoTrigger, 500);
         } else {
