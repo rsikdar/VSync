@@ -65,7 +65,7 @@
 
                         var roomHash = hashids.encode(Number(String(new Date().getTime()).substring(4)) + Math.floor((Math.random() * 10) + 1));
                         // var roomId = id;
-                        var url = '/cards.html?rId=' + roomHash + videoId;
+                        var url = '/vroom.html?rId=' + roomHash + videoId;
                         // console.log(url);
                         // console.log(location.host);
                         finalUrl = 'http://' + location.host + url;
