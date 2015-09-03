@@ -5,10 +5,10 @@ Currently hosted: vsync-env.elasticbeanstalk.com
 
 Features:
  - Basic Pause and Play for the group
+ - User syncing while video is already playing
 
 
 Features in progress:
- - User syncing while video is already playing
  - support for replaying the video
  - allowing user to change the video of the room without leaving the lobby
  - displaying related videos
