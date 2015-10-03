@@ -1,7 +1,7 @@
 VSync
 Video Sync:
 Watch videos with your friends! After searching the video, just share the url to invite other friends to watch!
-Currently hosted: vsync-env.elasticbeanstalk.com
+Formerly hosted: vsync-env.elasticbeanstalk.com -- currently taken down
 
 Features:
  - Basic Pause and Play for the group
