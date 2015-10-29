@@ -6,7 +6,7 @@ var io = require('socket.io')(http);
 // app.use(session({
 // 	cookieName: 'session',
 // 	secret: 'qwerty',
-
+var port = process.env.PORT || 8080;
 // }));
 var all_rooms = [];
 // var all_users = [];
@@ -190,6 +190,6 @@ io.on('connection', function(socket){
 
 });
 
-http.listen(8081, function(){
+http.listen(port, function(){
 	console.log('listening on port 8081');
 });
